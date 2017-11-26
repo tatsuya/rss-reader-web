@@ -17,7 +17,7 @@ Set the Heroku environment variable by `heroku config:set` command.
 ```
 heroku login
 heroku create
-heroku config:set RSS_READER_API_URL=https://quiet-sierra-84111.herokuapp.com/
+heroku config:set RSS_READER_API_URL=https://rss-reader-server.herokuapp.com/
 git push heroku master
 heroku open
 ```
