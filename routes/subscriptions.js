@@ -11,7 +11,7 @@ router.get('/:id', function(req, res, next) {
       return next(err);
     }
     res.render('subscription', {
-      title: 'RSS reader - ' + subscription.feed.url,
+      title: 'RSS reader - ' + subscription.feed.title,
       subscription: subscription
     });
   });
