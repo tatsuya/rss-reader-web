@@ -7,6 +7,7 @@ This app requires *RSS reader server* running as a backend API. Set the URL of t
 ## Running locally
 
 ```
+npm install
 npm start
 ```
 
