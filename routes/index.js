@@ -4,6 +4,7 @@ var router = express.Router();
 var subscription = require('../lib/subscription');
 
 router.get('/', function(req, res, next) {
+  console.log('Getting current subscriptions...');
   subscription.list(function(err, subscriptions) {
     if (err) {
       return next(err);
