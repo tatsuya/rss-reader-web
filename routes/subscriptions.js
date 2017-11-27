@@ -16,6 +16,20 @@ router.get('/', function(req, res, next) {
   });
 });
 
+router.get('/:id', function(req, res, next) {
+  var id = req.params.id;
+  console.log('Getting subscription ' + id);
+  subscription.get(id, function(err, subscription) {
+    if (err) {
+      return next(err);
+    }
+    res.render('subscription', {
+      title: 'RSS reader - ' + subscription.feed.url,
+      subscription: subscription
+    });
+  });
+});
+
 router.post('/', function(req, res, next) {
   subscription.subscribe(req.body.url, function(err) {
     if (err) {

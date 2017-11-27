@@ -13,11 +13,12 @@ block content
 
   h2 Current subscriptions
   ul
-  each subscription in subscriptions
-    form(action='/subscriptions/' + subscription.id + '/delete' method='post')
-      li
-        label
-          a(href=subscription.url target='_blank') #{subscription.url}
-        |
-        |
-        button(type='submit') Unsubscribe
+    each subscription in subscriptions
+      form(action='/subscriptions/' + subscription.id + '/delete' method='post')
+        li
+          h3
+            label
+              a(href=subscription.url target='_blank') #{subscription.feed.title}
+            |
+            |
+            button(type='submit') Unsubscribe

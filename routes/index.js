@@ -1,16 +1,16 @@
 var express = require('express');
 var router = express.Router();
 
-var feed = require('../lib/feed');
+var subscription = require('../lib/subscription');
 
 router.get('/', function(req, res, next) {
-  feed.list(function(err, feeds) {
+  subscription.list(function(err, subscriptions) {
     if (err) {
       return next(err);
     }
     res.render('index', {
       title: 'RSS reader - Home',
-      feeds: feeds
+      subscriptions: subscriptions
     });
   });
 });
